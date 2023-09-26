@@ -12,5 +12,14 @@ namespace OrderApp.Entities
             Email = email;
             BirthDate = birthDate;
         }
+
+        public override string ToString()
+        {
+            return Name
+                + ", ("
+                + BirthDate.ToString("dd/MM/yyyy")
+                + ") - "
+                + Email;
+        }
     }
 }

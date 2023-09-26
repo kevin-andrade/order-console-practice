@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace OrderApp.Entities{
     public class OrderItem
     {
@@ -15,6 +17,17 @@ namespace OrderApp.Entities{
         public double SubTotal()
         {
             return Price * Quantity;
+        }
+
+        public override string ToString()
+        {
+            return Product.Name
+                + ", $"
+                + Price.ToString("F2", CultureInfo.InvariantCulture)
+                +", Quantity: "
+                + Quantity
+                + ", subtotal: $"
+                + SubTotal().ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
